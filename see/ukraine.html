@@ -65,6 +65,27 @@
             flex-direction: column;
 
             color: #5a6268;
+            font-size: x-large;
+
+            padding: 0;
+            margin: 0;
+
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+        }
+
+        #part-3 {
+            background: #1d2124;
+            display: flex;
+            flex-direction: column;
+
+            color: #5a6268;
             font-size: xx-large;
 
             padding: 0;
@@ -136,6 +157,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 </head>
 <body>
 
@@ -159,7 +181,7 @@
     <div class="container" style="color: #1d2124; opacity: 0.9">
         <h1 class="ml12" style="  font-size: 4.5rem; font-weight: 300; line-height: 1.2;">Україна задимлена</h1>
         <p class="lead mb-0">Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
-        <div style="padding: 3vh"><a href="#">прокрути вниз</a></div>
+        <div style="padding: 3vh"><a href="#part-3">прокрути вниз</a></div>
     </div>
 
     <!--    Animated text -->
@@ -241,6 +263,110 @@
         setInterval(updateGradient, 10);
     </script>
 </div>
+
+<!--<section>-->
+<!--    <div class="container-fluid" id="part-2" style="height: 100vh">-->
+<!--        <div style="padding: 3rem"><mark>691 637</mark> people die each year.</div>-->
+<!--        <div style="padding: 3rem">That's <mark>79</mark> every hour.</div>-->
+<!--        <div style="padding: 3rem"><mark>1</mark> every minute.</div>-->
+
+<!--        <div style="padding: 3vh"><a href="#part-3">прокрути вниз</a></div>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section>
+    <div class="container-fluid" id="part-3" style="height: 100vh">
+
+        <style>
+            .container {
+                max-width: 700px;
+            }
+            canvas{
+                padding: 10px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .jumbotron {
+                font-size: 16px;
+                font-weight: 400;
+                opacity: 0.9;
+            }
+        </style>
+
+
+        <div class="container">
+
+        <div class="jumbotron">
+            <h3>Лорем ипсум долор сит амет</h3>
+            <canvas id="chart_1" width="400" height="200"></canvas>
+            <p>Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
+            <p>Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи.</p>
+        </div>
+        </div>
+
+        <script>
+            new Chart(document.getElementById("chart_1"), {
+                "type": "bar",
+                "data": {
+                    "labels": ["2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"],
+                    "datasets": [{
+                        "label": "Tax",
+                        "data": [2.4,3.6,9.1,13.1,15.3,16.6,17.9,18.1,22.2,38],
+                        "type": "line",
+                        "fill": false,
+                        "borderColor": "rgb(54, 162, 235, 0.8)"
+                    },{
+                        "label": "Price per pack",
+                        "data": [2.5,2.8,4.9,6.8,8.2,9.4,10.6,12.7,16.6,17.8],
+                        "borderColor": "rgb(255, 99, 132)",
+                        "backgroundColor": "rgba(255, 99, 132, 0.8)"
+                    }]
+                },
+                "options": {
+                    "scales": {
+                        "yAxes": [{
+                            "ticks": {
+                                "beginAtZero": true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("chart_2"), {
+                "type": "bar",
+                "data": {
+                    "labels": ["2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"],
+                    "datasets": [{
+                        "label": "Tax",
+                        "data": [2.4,3.6,9.1,13.1,15.3,16.6,17.9,18.1,22.2,38],
+                        "type": "line",
+                        "fill": false,
+                        "borderColor": "rgb(54, 162, 235, 0.8)"
+                    },
+                        {
+                            "label": "Tobacco Sales",
+                            "data": [113.8,117.5,104.1,88.7,79.6,75,68.8,61,68.1,76],
+                            "borderColor": "rgb(255, 99, 132)",
+                            "backgroundColor": "rgba(255, 99, 132, 0.8)"
+                        }]
+                },
+                "options": {
+                    "scales": {
+                        "yAxes": [{
+                            "ticks": {
+                                "beginAtZero": true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+
+    </div>
+</section>
 
 </body>
 </html>
