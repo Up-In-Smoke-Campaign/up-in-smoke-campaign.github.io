@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:url"           content="https://up-in-smoke-campaign.github.io/see/ukraine.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Up in smoke - Ukraine (Україна задимлена)" />
+    <meta property="og:description"   content="Up in smoke is a pro-health campaign based on an open-source project developed by P.E.N. (policyentrepreneurs.org)" />
+    <meta property="og:image"         content="https://up-in-smoke-campaign.github.io/oth3.gif" />
 
     <title>Up in smoke - Ukraine</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -59,28 +63,7 @@
             display: -webkit-flex;
         }
 
-        #part-2 {
-            background: #1d2124;
-            display: flex;
-            flex-direction: column;
-
-            color: #5a6268;
-            font-size: x-large;
-
-            padding: 0;
-            margin: 0;
-
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-        }
-
-        #part-3 {
+        .part-x {
             background: #1d2124;
             display: flex;
             flex-direction: column;
@@ -144,15 +127,66 @@
 
         @media (pointer: coarse) and (hover: none) {
             header {
-                // TODO: Switch background
-                background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+                // TODO
+                /*background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;*/
             }
             header video {
                 display: none;
             }
         }
 
+        canvas{
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .jumbotron {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .scroll-down {
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        emphasis {
+            color: #b21f2d;
+            font-weight: bold;
+        }
+
+        .source {
+            font-size: small;
+            font-family: Arial;
+            opacity: 0.6;
+        }
+
+        footer {
+            background: #1d2124;
+            color: silver;
+            font-size: small;
+            font-family: Arial;
+            font-weight: bold;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5vh;
+        }
+
     </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154441744-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154441744-1');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -171,17 +205,31 @@
             <div class="w-100 text-white">
                 <h1 class="display-3">Україна задимлена</h1>
                 <p class="lead mb-0">Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
-                <div style="padding: 3vh"><a href="#part-1">прокрути вниз</a></div>
+                <div class="scroll-down" style="padding: 3vh"><a href="#part-1">прокрути вниз</a></div>
             </div>
         </div>
     </div>
 </header>
 
+<!--<section>-->
+<!--    <div class="container-fluid part-x" id="part-0" style="height: 100vh">-->
+
+<!--        <div class="container" style="max-width: 700px">-->
+<!--            <div class="jumbotron">-->
+
+<!--                <p>Smoking is the #1 cause of preventable death. Anywhere in the world.</p>-->
+
+<!--            </div>-->
+<!--            <div class="scroll-down"><a href="#part-1">прокрути вниз</a></div></div>-->
+<!--        </div>-->
+
+<!--</section>-->
+
 <div class="container-fluid" id="part-1" style="height: 100vh">
     <div class="container" style="color: #1d2124; opacity: 0.9">
         <h1 class="ml12" style="  font-size: 4.5rem; font-weight: 300; line-height: 1.2;">Україна задимлена</h1>
         <p class="lead mb-0">Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
-        <div style="padding: 3vh"><a href="#part-3">прокрути вниз</a></div>
+        <div class="scroll-down" style="padding: 3vh"><a href="#part-3">прокрути вниз</a></div>
     </div>
 
     <!--    Animated text -->
@@ -211,13 +259,6 @@
     <!--    Animated background-->
     <script type="text/javascript">
         const colors = [[241,235,235], [238,232,232], [202,202,202], [155,157,161], [246,240,229], [155,157,161]];
-
-        // reds
-        // const colors = [[135,28,4], [87,0,0], [135,28,4], [0, 0, 0]];
-
-        // multi
-        // const colors = [[62, 35, 255], [60, 255, 60], [255, 35, 98], [45, 175, 230], [255, 0, 255], [255, 128, 0]];
-
         let step = 0;
         const colorIndices = [0, 1, 2, 3];
         const gradientSpeed = 0.002;
@@ -266,44 +307,25 @@
 
 <!--<section>-->
 <!--    <div class="container-fluid" id="part-2" style="height: 100vh">-->
-<!--        <div style="padding: 3rem"><mark>691 637</mark> people die each year.</div>-->
-<!--        <div style="padding: 3rem">That's <mark>79</mark> every hour.</div>-->
-<!--        <div style="padding: 3rem"><mark>1</mark> every minute.</div>-->
-
-<!--        <div style="padding: 3vh"><a href="#part-3">прокрути вниз</a></div>-->
 <!--    </div>-->
 <!--    </div>-->
 <!--</section>-->
 
 <section>
-    <div class="container-fluid" id="part-3" style="height: 100vh">
+    <div class="container-fluid part-x" id="part-3" style="height: 100vh">
 
-        <style>
-            #chart {
-                max-width: 700px;
-            }
-            canvas{
-                padding: 10px;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-            .jumbotron {
-                font-size: 16px;
-                font-weight: 400;
-                opacity: 0.9;
-            }
-        </style>
-
-
-        <div class="container" id="chart">
+        <div class="container" style="max-width: 700px">
 
         <div class="jumbotron">
             <h3>Лорем ипсум долор сит амет</h3>
             <canvas id="chart_1" width="400" height="200"></canvas>
+            <div class="source"><p>джерело: Лорем ипсум долор сит амет</p></div>
             <p>Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
             <p>Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи.</p>
         </div>
         </div>
+
+        <div class="scroll-down"><a href="#part-4">прокрути вниз</a></div>
 
         <script>
             new Chart(document.getElementById("chart_1"), {
@@ -333,7 +355,26 @@
                     }
                 }
             });
+        </script>
 
+
+    </div>
+
+    <div class="container-fluid part-x" id="part-4" style="height: 100vh">
+
+        <div class="container" style="max-width: 700px">
+            <div class="jumbotron">
+                <h3>Лорем ипсум долор сит амет</h3>
+                <canvas id="chart_2" width="400" height="200"></canvas>
+                <div class="source"><p>джерело: Лорем ипсум долор сит амет</p></div>
+                <p>Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
+                <p>Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи.</p>
+            </div>
+<!--            <div class="scroll-down"><a href="#part-5">прокрути вниз</a></div>-->
+        </div>
+
+
+        <script>
             new Chart(document.getElementById("chart_2"), {
                 "type": "bar",
                 "data": {
@@ -362,11 +403,29 @@
                     }
                 }
             });
+
         </script>
 
-
     </div>
+
+<!--    <div class="container-fluid part-x" id="part-5" style="height: 100vh">-->
+
+<!--        <div class="container" style="max-width: 700px">-->
+<!--            <div class="jumbotron">-->
+<!--                <h3>Raising taxes by 1% saves x lives</h3>-->
+<!--                <p>Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>-->
+<!--            </div>-->
+<!--            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>-->
+<!--            <div class="fb-share-button" data-href="https://up-in-smoke-campaign.github.io/see/ukraine.html" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fup-in-smoke-campaign.github.io%2Fsee%2Fukraine.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
 </section>
+
+<footer>
+    Україна задимлена is an <a href="https://github.com/Up-In-Smoke-Campaign/up-in-smoke-campaign.github.io" target="_blank">open-source project</a> developed for <a href="http://center-life.org/en/" target="_blank">Life</a>, by <a href="http://policyentrepreneurs.org/" target="_blank">P.E.N.</a> and Manoj Nathwani</a>
+</footer>
 
 </body>
 </html>
