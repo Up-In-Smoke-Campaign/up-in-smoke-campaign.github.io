@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:url"           content="https://ukraine-in-smoke.github.io/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Україна задимлена | Ukraine in smoke" />
+    <meta property="og:description"   content="" />
+    <meta property="og:image"         content="https://up-in-smoke-campaign.github.io/oth3.gif" />
+
+    <title>Україна задимлена | Ukraine in smoke</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/ukraine.css">
+
+    <!-- Custom font-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154441744-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154441744-1');
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.8/datamaps.all.js"></script>
+
+    <!--    <script src="https://d3js.org/d3.v4.js"></script>-->
+    <!--    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>-->
+    <!--    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>-->
+</head>
+<body>
+
+<!-- Progress bar by https://medium.com/@nilayvishwakarma/ -->
+<div id="_progress"></div>
+<script>
+    document.addEventListener(
+        "scroll",
+        function() {
+            var scrollTop =
+                document.documentElement["scrollTop"] || document.body["scrollTop"];
+            var scrollBottom =
+                (document.documentElement["scrollHeight"] ||
+                    document.body["scrollHeight"]) - document.documentElement.clientHeight;
+            scrollPercent = scrollTop / scrollBottom * 100 + "%";
+            document
+                .getElementById("_progress")
+                .style.setProperty("--scroll", scrollPercent);
+        },
+        { passive: true }
+    );
+</script>
+
+
+<!-- Facebook share button -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+
+
+<!-- Header -->
+<header>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://s3.eu-central-1.amazonaws.com/policyentrepreneurs.org/vid/smoke2.mp4" type="video/mp4">
+    </video>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <p><h1 class="display-3" style="font-size: 6.5vh">Україна задимлена</h1></p>
+                <p class="lead mb-0">Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
+                <div class="scroll-down" style="padding: 3vh"><a href="#part-1">прокрути вниз</a></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container-fluid part-x" id="part-1" style="height: 100vh">
+
+        <div class="container" style="max-width: 700px">
+            <div class="jumbotron">
+                <p><h3>Факт: tobacco kills up to a half of its users</h3></p>
+
+                <canvas id="chart-area-1" width="400" height="200"></canvas>
+
+                <div class="source"><p>джерело: <a href="https://www.who.int/news-room/fact-sheets/detail/tobacco" target="_blank">WHO</a></p></div>
+
+
+                <script>
+                    const blue = "rgb(20,98,106, 0.8)"
+                    const red = "rgb(173,32,32, 0.8)"
+
+                    new Chart(document.getElementById("chart-area-1"), {
+                        type: 'pie',
+                        data: {
+                            datasets: [{
+                                data: [50,50],
+                                backgroundColor: [
+                                    blue,
+                                    red,
+                                    // "#53777A", "#C02942"
+                                ],
+                                label: 'Dataset 1'
+                            }],
+                            labels: [
+                                'Survivors, %',
+                                'Victims, %'
+                            ]
+                        },
+                        options: {
+                            responsive: true
+                        }
+                    });
+                </script>
+            </div>
+            <div class="scroll-down"><a href="#part-2">прокрути вниз</a></div></div>
+        </div>
+</section>
+
+<section>
+    <div class="container-fluid part-x" id="part-2" style="height: 100vh">
+
+            <div class="container" style="max-width: 700px">
+                <div class="jumbotron">
+                    <h3>Факт: tobacco accounts for 12% of all death in the world</h3>
+
+                    <canvas id="chart-area-2" width="400" height="200"></canvas>
+
+                    <div class="source"><p>джерело: <a href="https://www.who.int/news-room/fact-sheets/detail/tobacco" target="_blank">WHO</a></p></div>
+
+                    <p>12% of all deaths among adults aged 30 years and over were attributed to tobacco use. It kills more than 8 million people each year.</p>
+                    <p>Each of these deaths is preventable.</p>
+
+
+                    <script>
+                        new Chart(document.getElementById("chart-area-2"), {
+                            type: 'pie',
+                            data: {
+                                datasets: [{
+                                    data: [
+                                        12,
+                                        88,
+                                    ],
+                                    backgroundColor: [
+                                        red,
+                                        blue
+                                    ],
+                                    label: 'Dataset 1'
+                                }],
+                                labels: [
+                                    'Tobacco, %',
+                                    'Other causes, %'
+                                ]
+                            },
+                            options: {
+                                responsive: true
+                            }
+                        });
+                    </script>
+                </div>
+                <div class="scroll-down"><a href="#part-3">прокрути вниз</a></div></div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid part-x" id="part-3" style="height: 100vh">
+
+        <style>
+            #container1 { /*width: 420px;*/ height: 285px; position: relative; }
+        </style>
+
+
+        <div class="container" style="max-width: 700px">
+            <div class="jumbotron">
+                <p><h3>Факт: In Ukraine, prices for tobacco products are among the lowest in the world</h3></p>
+                <p><h6>Average price of a pack of cigarettes in USD, 2014</h6></p>
+                <p><div id="container1"></div></p>
+                <div class="source"><p>джерело: <a href="https://ourworldindata.org/grapher/average-price-of-a-pack-of-cigarettes" target="_blank">Our World in Data</a></p></div>
+                <br><p>At the average price of $2.22, tobacco is very affordable in Ukraine as compared to other countries in the world.</p>
+            </div>
+
+            <div class="scroll-down"><a href="#part-4">прокрути вниз</a></div>
+        </div>
+
+
+        <script>
+            var series = [["DZA",2.09],["ARG",3.47],["ARM",1.74],["AUS",10.64],["AUT",5.34],["AZE",2.7],["BHS",9.75],
+                ["BGD",1.54],["BLR",1.77],["BEL",6.08],["BLZ",6.75],["BOL",2.82],["BIH",3.86],["BRA",2.85],["BGR",6.25],
+                ["BDI",2.26],["KHM",0.92],["CMR",2.43],["CAN",6.88],["CHL",5.21],["CHN",2.13],["COL",1.81],["COM",1.96],
+                ["CRI",3.63],["HRV",5.65],["CYP",5.52],["CZE",5.69],["DNK",4.73],["DOM",6.25],["ECU",5.91],["EGY",2.69],
+                ["EST",4.8],["ETH",1.97],["FJI",4.57],["FIN",5.42],["FRA",7.61],["GMB",4.42],["GEO",2.41],["DEU",6.34],
+                ["GHA",2.41],["GRC",5.75],["GTM",3.22],["HND",3.38],["HUN",6.74],["ISL",8.89],["IND",4.63],["IDN",2.68],
+                ["IRN",2.52],["IRL",11.16],["ISR",7.15],["ITA",5.43],["JAM",13],["JPN",4.34],["KAZ",1.45],["KEN",1.78],
+                ["LVA",7.13],["LBN",2.67],["LTU",5.11],["LUX",4.47],["MKD",3.05],["MYS",6.1],["MLI",1.85],["MEX",5.15],
+                ["MDA",2.06],["MNG",2.54],["MAR",4.81],["NPL",1.73],["NLD",7.22],["NZL",10.61],["NOR",9.31],["OMN",2.86],
+                ["PAK",1.1],["PAN",6.44],["PER",3.7],["PHL",1.86],["POL",6.45],["PRT",5.93],["ROU",6.16],["RUS",2.18],
+                ["RWA",2.01],["SEN",1.91],["SRB",4.48],["SLE",1.58],["SGP",11.04],["SVK",4.95],["SVN",5.84],["ZAF",5.48],
+                ["KOR",3.24],["ESP",6.39],["LKA",8.42],["SWE",6.5],["CHE",5.08],["THA",3.41],["TUN",3.26],["TUR",5.63],
+                ["UGA",2.03],["UKR",2.22],["ARE",1.82],["GBR",11.2],["USA",6.07],["URY",3.71],["UZB",2.31],["VNM",2.07],
+                ["YEM",1.94],["ZMB",1.81],["ZWE",1.07]];
+
+            // Datamaps expect data in format:
+            // { "USA": { "fillColor": "#42a844", numberOfWhatever: 75},
+            //   "FRA": { "fillColor": "#8dc386", numberOfWhatever: 43 } }
+            var dataset = {};
+
+            // We need to colorize every country based on "numberOfWhatever"
+            // colors should be uniq for every value.
+            // For this purpose we create palette(using min/max series-value)
+            var onlyValues = series.map(function(obj){ return obj[1]; });
+            var minValue = Math.min.apply(null, onlyValues),
+                maxValue = Math.max.apply(null, onlyValues);
+
+            // create color palette function
+            // color can be whatever you wish
+            var paletteScale = d3.scale.linear()
+                .domain([minValue,maxValue])
+                .range(["#AD2020","#EFEFFF"]);
+
+            // fill dataset in appropriate format
+            series.forEach(function(item){ //
+                // item example value ["USA", 70]
+                var iso = item[0],
+                    value = item[1];
+                dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
+            });
+
+            // render map
+            new Datamap({
+                element: document.getElementById('container1'),
+                projection: 'mercator', // big world map
+                // countries don't listed in dataset will be painted with this color
+                fills: { defaultFill: '#F5F5F5' },
+                data: dataset,
+                responsive:false,
+                geographyConfig: {
+                    borderColor: '#DEDEDE',
+                    highlightBorderWidth: 2,
+                    // don't change color on mouse hover
+                    highlightFillColor: function(geo) {
+                        return geo['fillColor'] || '#F5F5F5';
+                    },
+                    // only change border
+                    highlightBorderColor: '#B7B7B7',
+                    // show desired information in tooltip
+                    popupTemplate: function(geo, data) {
+                        // don't show tooltip if country don't present in dataset
+                        if (!data) { return ; }
+                        // tooltip content
+                        return ['<div class="hoverinfo">',
+                            '<strong>', geo.properties.name, '</strong>',
+                            '<br>Average price in USD: <strong>', data.numberOfThings, '</strong>',
+                            '</div>'].join('');
+                    }
+                }
+            });
+            </script>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid part-x" id="part-4" style="height: 100vh">
+
+        <style>
+            #container2 { /*width: 420px;*/ height: 285px; position: relative; }
+        </style>
+
+        <div class="container" style="max-width: 700px">
+            <div class="jumbotron">
+                <p><h3>Факт: in Ukraine, death rate from smoking is among the highest in the world</h3></p>
+                <p><h6>Death rate from smoking</h6></p>
+                <p><div id="container2"></div></p>
+                <div class="source"><p>джерело: <a href="https://ourworldindata.org/grapher/death-rate-smoking" target="_blank">Our World in Data</a></p></div>
+            </div>
+        </div>
+
+
+        <script>
+            var series = [
+                ["AFG",90],["ALB",98],["DZA",60],["ASM",74],["AND",58],["AGO",88],["ATG",38],["ARG",97],["ARM",117],
+                ["AUS",51],["AUT",64],["AZE",142],["BHS",43],["BHR",46],["BGD",80],["BRB",34],["BLR",135],["BEL",84],
+                ["BLZ",52],["BEN",45],["BMU",49],["BTN",54],["BOL",50],["BIH",142],["BWA",74],["BRA",75],["BRN",105],
+                ["BGR",141],["BFA",36],["BDI",67],["KHM",129],["CMR",46],["CAN",70],["CPV",29],["CAF",113],["TCD",32],
+                ["CHL",45],["CHN",120],["COL",36],["COM",41],["COG",67],["CRI",45],["CIV",60],["HRV",105],["CUB",98],
+                ["CYP",78],["CZE",98],["COD",48],["DNK",97],["DJI",68],["DMA",41],["DOM",86],["ECU",33],["EGY",123],
+                ["SLV",39],["GNQ",40],["ERI",49],["EST",82],["ETH",25],["FJI",122],["FIN",45],["FRA",57],["GAB",62],
+                ["GMB",73],["GEO",116],["DEU",74],["GHA",41],["GRC",100],["GRD",56],["GUM",64],["GTM",37],
+                ["GIN",42],["GNB",44],["GUY",67],["HTI",62],["HND",70],["HUN",126],["ISL",58],["IND",92],["IDN",116],
+                ["IRN",60],["IRQ",54],["IRL",76],["ISR",53],["ITA",55],["JAM",75],["JPN",52],["JOR",66],["KAZ",119],
+                ["KEN",50],["KIR",266],["KWT",42],["KGZ",89],["LAO",141],["LVA",106],["LBN",114],["LSO",156],["LBR",50],
+                ["LBY",62],["LTU",101],["LUX",68],["MKD",126],["MDG",54],["MWI",55],["MYS",100],["MDV",65],["MLI",35],
+                ["MLT",69],["MHL",131],["MRT",26],["MUS",70],["MEX",48],["FSM",116],["MDA",112],["MNG",137],["MNE",169],
+                ["MAR",59],["MOZ",91],["MMR",175],["NAM",89],["NPL",125],["NLD",88],["NZL",54],["NIC",33],["NER",24],
+                ["NGA",18],["PRK",118],["MNP",54],["NOR",60],["OMN",51],["PAK",129],["PSE",50],["PAN",39],
+                ["PRY",86],["PER",23],["PHL",140],["POL",109],["PRT",51],["PRI",26],["QAT",38],["ROU",112],["RUS",130],
+                ["RWA",84],["LCA",54],["VCT",51],["WSM",140],["STP",40],["SAU",35],["SEN",34],["SRB",153],["SYC",85],
+                ["SLE",71],["SGP",36],["SVK",90],["SVN",69],["SLB",169],["SOM",80],["ZAF",70],["KOR",58],["SSD",68],
+                ["ESP",65],["LKA",55],["SDN",16],["SUR",83],["SWZ",100],["SWE",58],["CHE",53],["SYR",81],["TWN",72],
+                ["TJK",85],["TZA",70],["THA",58],["TLS",109],["TGO",44],["TON",105],["TTO",56],["TUN",94],["TUR",89],
+                ["TKM",98],["UGA",44],["UKR",154],["ARE",66],["GBR",69],["USA",76],["VIR",44],["URY",89],["UZB",99],
+                ["VUT",146],["VEN",59],["VNM",99],["YEM",103],["ZMB",77],["ZWE",139]];
+
+            // Datamaps expect data in format:
+            // { "USA": { "fillColor": "#42a844", numberOfWhatever: 75},
+            //   "FRA": { "fillColor": "#8dc386", numberOfWhatever: 43 } }
+            var dataset = {};
+
+            // We need to colorize every country based on "numberOfWhatever"
+            // colors should be uniq for every value.
+            // For this purpose we create palette(using min/max series-value)
+            var onlyValues = series.map(function(obj){ return obj[1]; });
+            var minValue = Math.min.apply(null, onlyValues),
+                maxValue = Math.max.apply(null, onlyValues);
+
+            // create color palette function
+            // color can be whatever you wish
+            var paletteScale = d3.scale.linear()
+                .domain([minValue,maxValue])
+                .range(["#EFEFFF",blue]); // blue color
+
+            // fill dataset in appropriate format
+            series.forEach(function(item){ //
+                // item example value ["USA", 70]
+                var iso = item[0],
+                    value = item[1];
+                dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
+            });
+
+            // render map
+            new Datamap({
+                element: document.getElementById('container2'),
+                responsive:false,
+                projection: 'mercator', // big world map
+                // countries don't listed in dataset will be painted with this color
+                fills: { defaultFill: '#F5F5F5' },
+                data: dataset,
+                geographyConfig: {
+                    borderColor: '#DEDEDE',
+                    highlightBorderWidth: 2,
+                    // don't change color on mouse hover
+                    highlightFillColor: function(geo) {
+                        return geo['fillColor'] || '#F5F5F5';
+                    },
+                    // only change border
+                    highlightBorderColor: '#B7B7B7',
+                    // show desired information in tooltip
+                    popupTemplate: function(geo, data) {
+                        // don't show tooltip if country don't present in dataset
+                        if (!data) { return ; }
+                        // tooltip content
+                        return ['<div class="hoverinfo">',
+                            '<strong>', geo.properties.name, '</strong>',
+                            '<br>Deaths per 100,000: <strong>', data.numberOfThings, '</strong>',
+                            '</div>'].join('');
+                    }
+                }
+            });
+         </script>
+        <div class="scroll-down"><a href="#part-5">прокрути вниз</a></div>
+    </div>
+    </div>
+</section>
+
+<section>
+
+    <div class="container-fluid part-x" id="part-5" style="height: 100vh">
+
+        <div class="container" style="max-width: 700px">
+
+            <div class="jumbotron">
+                <h3>Tax increases are already helping to reduce tobacco consumption in Ukraine</h3>
+                <canvas id="chart_1" width="400" height="200"></canvas>
+                <div class="source"><p>джерело: <a href="http://documents.worldbank.org/curated/en/765671507036953947/Regressive-or-progressive-the-effect-of-tobacco-taxes-in-Ukraine" target="_blank">World Bank</a></p></div>
+                <p>The most cost-effective way to reduce tobacco use is to raise taxes. In a country like Ukraine, a tax increase that increases tobacco prices by 10% decreases tobacco consumption by about 5%. It is especially effective among youth and people of low income.
+                    <sup style="font-family: Arial; opacity: 0.6"><a href="http://documents.worldbank.org/curated/en/765671507036953947/Regressive-or-progressive-the-effect-of-tobacco-taxes-in-Ukraine" target="_blank">джерело</a></sup></p>
+            </div>
+        </div>
+        <div class="scroll-down"><a href="#part-6">прокрути вниз</a></div>
+
+
+        <script>
+            new Chart(document.getElementById("chart_1"), {
+                "type": "bar",
+                "data": {
+                    "labels": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                    "datasets": [{
+                        "label": "Excise per pack of cigarettes, UAH",
+                        "data": [0.58,1.62,2.74,3.48,4.04,4.76,4.96,6.08,8.62,12,15.5],
+                        "type": "line",
+                        "fill": false,
+                        "borderColor": blue,
+                        "backgroundColor": blue
+                    },{
+                        "label": "Number of daily smokers, millions",
+                        "data": [10.1,9.2,8.7,8.6,8.35,8.1,7.7,6.7,6.9,6.5,5.96],
+                        "type": "line",
+                        "fill": false,
+                        "borderColor": red,
+                        "backgroundColor": red,}]
+                },
+                "options": {
+                    "scales": {
+                        "yAxes": [{
+                            "ticks": {
+                                "beginAtZero": true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid part-x" id="part-6" style="height: 100vh">
+
+        <div class="container" style="max-width: 700px">
+            <div class="jumbotron">
+                <p><h3>Tax increases are already generating public health benefits in Ukraine</h3></p>
+
+                <canvas id="chart-area-3" width="400" height="200"></canvas>
+
+
+                <script>
+                    new Chart(document.getElementById("chart-area-3"), {
+                        "type": "bar",
+                        "data": {
+                            "labels": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                            "datasets": [{
+                                "label": "Tobacco excise revenue, bln UAH",
+                                "data": [3.6,9.1,13.1,15.3,16.6,17.9,18.1,22.2,33.2,39.9,43.6],
+                                "type": "line",
+                                "fill": false,
+                                "backgroundColor": blue,
+                                "borderColor": blue
+                            },{
+                                "label": "Excise per pack of cigarettes, UAH",
+                                "data": [0.58,1.62,2.74,3.48,4.04,4.76,4.96,6.08,8.62,12,15.5],
+                                "type": "line",
+                                "fill": false,
+                                "borderColor": red,
+                                // "backgroundColor": "rgba(255, 99, 132, 0.8)"}]
+                                "backgroundColor": red,}]
+                        },
+                        "options": {
+                            "scales": {
+                                "yAxes": [{
+                                    "ticks": {
+                                        "beginAtZero": true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+
+                <div class="source"><p>джерело: <a href="http://documents.worldbank.org/curated/en/765671507036953947/Regressive-or-progressive-the-effect-of-tobacco-taxes-in-Ukraine" target="_blank">World Bank</a></p></div>
+
+                <p>World Bank's simulation estimated the public-health impacts of tobacco taxation measures, along with other tobacco control policies.
+                    By 2035, Ukraine’s tobacco tax hike will avoid: 126,730 new cases of smoking-related disease; 29,172 premature deaths;
+                    and 267,098 potential years of life lost.<sup style="font-family: Arial; opacity: 0.6"><a href="http://documents.worldbank.org/curated/en/893811554737147697/Is-Tobacco-Taxation-Regressive-Evidence-on-Public-Health-Domestic-Resource-Mobilization-and-Equity-Improvements" target="_blank">джерело</a></sup> </p>
+                <p>Reductions in disease and death will save UAH 1.5 billion in healthcare costs and UAH 16.5 billion in premature mortality costs.<sup style="font-family: Arial; opacity: 0.6"><a href="http://documents.worldbank.org/curated/en/893811554737147697/Is-Tobacco-Taxation-Regressive-Evidence-on-Public-Health-Domestic-Resource-Mobilization-and-Equity-Improvements" target="_blank">джерело</a></sup></p>
+
+            </div>
+            <div class="scroll-down"><a href="#part-last">прокрути вниз</a></div></div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid" id="part-last" style="height: 100vh">
+        <div class="container" style="color: #1d2124; opacity: 0.9;">
+            <p><h1 class="ml12" style="font-size: 6.5vh; font-weight: 300; line-height: 1.2;">Україна задимлена</h1></p>
+            <p class="lead mb-0">Лорем ипсум долор сит амет, поссит регионе перципитур ин хис, модус епицури адолесценс при ех. Фугит индоцтум еррорибус ан вих, цу зрил граецис яуи. Но петентиум оцурререт темпорибус нам. Облияуе пондерум суавитате хас но.</p>
+
+            <br>
+            <div class="fb-share-button" data-href="https://up-in-smoke-campaign.github.io/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fup-in-smoke-campaign.github.io%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+            <div style="font-weight: bold; font-family: Arial; font-size: small; align-self:flex-end; opacity: 0.5;">
+                <br><p id="copyright"></p>
+            </div>
+
+
+            <script>
+                function copyrightYear() {
+                    var d = new Date();
+                    var y = d.getFullYear();
+                    document.getElementById("copyright").innerHTML = 'Copyright &copy; ' + y + ' Україна задимлена for <a href="http://center-life.org/en/" target="_blank">Життя</a>';
+                }
+
+                copyrightYear();
+            </script>
+
+        </div>
+
+        <!--    Animated text -->
+        <script>
+            var textWrapper = document.querySelector('.ml12');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            anime.timeline({loop: true})
+                .add({
+                    targets: '.ml12 .letter',
+                    translateX: [40,0],
+                    translateZ: 0,
+                    opacity: [0,1],
+                    easing: "easeOutExpo",
+                    duration: 1200,
+                    delay: (el, i) => 500 + 30 * i
+                }).add({
+                targets: '.ml12 .letter',
+                translateX: [0,-30],
+                opacity: [1,0],
+                easing: "easeInExpo",
+                duration: 1100,
+                delay: (el, i) => 100 + 30 * i
+            });
+        </script>
+
+        <!--    Animated background-->
+        <script type="text/javascript">
+            const colors = [[241,235,235], [238,232,232], [202,202,202], [155,157,161], [246,240,229], [155,157,161]];
+            let step = 0;
+            const colorIndices = [0, 1, 2, 3];
+            const gradientSpeed = 0.002;
+
+            function updateGradient() {
+
+                if ($ === undefined) return;
+
+                const c0_0 = colors[colorIndices[0]];
+                const c0_1 = colors[colorIndices[1]];
+                const c1_0 = colors[colorIndices[2]];
+                const c1_1 = colors[colorIndices[3]];
+
+                const istep = 1 - step;
+                const r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+                const g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+                const b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+                const color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+
+                const r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+                const g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+                const b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+                const color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+
+                $('#part-last').css({
+                    background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
+                }).css({
+                    background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+                });
+
+                step += gradientSpeed;
+                if (step >= 1) {
+                    step %= 1;
+                    colorIndices[0] = colorIndices[1];
+                    colorIndices[2] = colorIndices[3];
+
+                    //pick two new target color indices
+                    colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+                    colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+                }
+            }
+
+            setInterval(updateGradient, 10);
+        </script>
+    </div>
+</section>
+
+</body>
+</html>
